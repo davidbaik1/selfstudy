@@ -2,35 +2,37 @@
 #include <string.h>
 #include <stdlib.h>
 
-char *myreverse_str(char *a)
+char *myreverse_str(char *s)
 {
-	int i = 0, j=0;
-	char *temp;
-	
-	while (*(a + i) != NULL)
+	int i = 0, j = 0;
+	char *temp=NULL;
+
+	while (*(s + i) != NULL)
 	{
 		i++;
 	}
-	temp = (char *)malloc(sizeof(char)*i);
-	int c = i+1;
+	//printf("i=%d", i);
+	temp = (char *)malloc(sizeof(char)*(i+1));
+
+	int c = i;
 
 	for (j = 0; j < c; j++)
 	{
-		*(temp+j) = *(a + i);
-		printf("%c", *(temp + j));
 		i--;
+		*(temp + j) = *(s + i);
+		printf("%c", *(temp + j));
 	}
-	
+	temp[j] = NULL;
 	return temp;
 }
 
 void main()
 {
-	char *a = "1234567";
+	char *a = "hello";
 	char *p;
 
 	p = myreverse_str(a);
-	printf("\nreverse datat = %s", p+1);
+	printf("\nreverse datat = %s", p);
 
 	free(p);
 }
