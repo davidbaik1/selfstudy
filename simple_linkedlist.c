@@ -10,7 +10,7 @@ struct list
 
 void main()
 {
-	struct list a = { 10 }, b{ 20 }, c{ 30 };
+	struct list a = { 10 }, b={ 20 }, c={ 30 };
 
 #if 0
 	struct list *tp = &a;
