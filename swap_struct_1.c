@@ -2,8 +2,10 @@
 
 struct change
 {
-	char *left = "abc";
-	char *right = "def";
+	//char *left = "abc";
+	//char *right = "def";
+	char *left;
+	char *right;
 };
 
 struct change swap(struct change b)
@@ -19,8 +21,11 @@ struct change swap(struct change b)
 void main()
 {
 	struct change a;
+	
+	a.left = "abc";
+	a.right = "def";
 
 	a = swap(a);
 
-	printf("\nleft = %s, right = %s", a.left, a.right);
+	printf("\nleft = %s, right = %s\n", a.left, a.right);
 }
